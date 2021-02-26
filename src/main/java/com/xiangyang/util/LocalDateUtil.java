@@ -21,6 +21,8 @@ public class LocalDateUtil {
 	private static final Logger LOGGER = LoggerFactory.getLogger(LocalDateUtil.class);
 	private static final String YYYYMMDD = "yyyy-MM-dd";
 	private static final String YYYYMMDDHHMMSS = "yyyy-MM-dd HH:mm:ss";
+
+	private static final String HHMM = "HH:mm";
 	
 	/**
 	 * 获取当前时间
@@ -114,10 +116,20 @@ public class LocalDateUtil {
 		   Instant.ofEpochMilli(time),ZoneId.of("Asia/Shanghai")));
 		return longToDateTime;
 	}
+
+	/**
+	 * 获取当前时间的 分钟和秒数
+	 * @return 16:01
+	 */
+	public static final String getCurrentHHMM(){
+		DateTimeFormatter df = DateTimeFormatter.ofPattern(HHMM);
+		String time = df.format(LocalDateTime.ofInstant(Instant.ofEpochMilli(getCurrentDate().getTime()), ZoneId.of("Asia/Shanghai")));
+		return time;
+	}
 	
 	/**
 	 * 将一个日期加几天 或者减几天
-	 * @param date日期
+	 * @param date 日期
 	 * @param days 添加的数 
 	 * @return  年-月-日
 	 */
@@ -197,6 +209,7 @@ public class LocalDateUtil {
 //		System.out.println(DateFormat.getInstance());
 //		System.out.println(addDays(new Date(), -2l));
 //		System.out.println(differDays(new Date(), parseYYYYMMDD("2019-12-24")));
-		System.out.println(differWeeks(parseYYYYMMDD("2020-01-06"), parseYYYYMMDD("2020-01-14")));
+//		System.out.println(differWeeks(parseYYYYMMDD("2020-01-06"), parseYYYYMMDD("2020-01-14")));
+		System.out.println(getCurrentHHMM());
 	}
 }

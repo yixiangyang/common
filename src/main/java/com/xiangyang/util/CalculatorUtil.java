@@ -3,7 +3,6 @@ package com.xiangyang.util;
 import java.math.BigDecimal;
 
 /**
- * @author chenjun
  * 
  * 计算器
  *
