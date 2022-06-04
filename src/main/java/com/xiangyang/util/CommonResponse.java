@@ -16,4 +16,12 @@ public class CommonResponse<T> {
     private String code = "SUCCESS";
     private String msg = "成功";
     private T data;
+
+    public static <T> CommonResponse<T> fail(String code, String msg) {
+        CommonResponse<T> result = new CommonResponse<>();
+        result.status = 500;
+        result.code = code;
+        result.msg = msg;
+        return result;
+    }
 }

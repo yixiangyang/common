@@ -4,10 +4,13 @@ import lombok.Data;
 import lombok.ToString;
 import org.apache.poi.ss.formula.functions.T;
 
+import java.io.Serializable;
+
 @Data
 @ToString
-public class CodeException extends RuntimeException {
-    private static final long serialVersionUID = 1L;
+public class CodeException extends RuntimeException implements Serializable {
+    private static final long serialVersionUID = -7354994305682706270L;
+
     private String code;
     private String msg;
     private long timestamp = System.currentTimeMillis();
