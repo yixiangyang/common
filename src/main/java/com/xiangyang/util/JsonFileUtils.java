@@ -43,7 +43,7 @@ public class JsonFileUtils {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        System.out.println(com.weimob.xiuyu.common.util.JsonFileUtils.readJsonFile(file));
+//        System.out.println(com.weimob.xiuyu.common.util.JsonFileUtils.readJsonFile(file));
 
 
     }
